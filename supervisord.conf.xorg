@@ -1,0 +1,11 @@
+[supervisord]
+nodaemon=true
+
+[program:sshd]
+command=/usr/sbin/sshd -D
+
+[program:xpra]
+command=xpra --no-daemon --start-child=firefox --xvfb="Xorg -dpi 96 -noreset -nolisten tcp +extension GLX +extension RANDR +extension RENDER -logfile /home/xpra/.xpra/Xvfb-10.log -config /home/xpra/xorg.conf" start :100
+user=xpra
+environment=HOME="/home/xpra"
+
