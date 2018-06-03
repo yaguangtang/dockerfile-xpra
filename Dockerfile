@@ -5,7 +5,7 @@ MAINTAINER Yaguang <heut2008@gmail.com>
 RUN sed -i 's/archive/cn.archive/' /etc/apt/sources.list && apt-get update
 
 # Install supervisord.
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y supervisor gnupg firefox x264 fonts-arphic-uming pulseaudio
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y supervisor gnupg firefox x264 fonts-arphic-uming pulseaudio ffmpeg x264
 
 # Setup sshd
 RUN apt-get install -y ssh && \
